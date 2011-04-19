@@ -1,6 +1,6 @@
 require "test_helper"
 
-if DEVISE_ORM == :mongo_id
+if DEVISE_ORM == :mongo_mapper
   require "generators/mongo_mapper/devise_generator"
 
   class MongoidGeneratorTest < Rails::Generators::TestCase

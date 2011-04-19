@@ -1,5 +1,4 @@
 require 'orm_adapter/adapters/mongo_mapper'
-
 module Devise
   module Orm
     module MongoMapper
@@ -25,7 +24,12 @@ module Devise
   end
 end
 
-MongoMapper::Document::ClassMethods.class_eval do
-  include Devise::Models
-  include Devise::Orm::MongoMapper::Hook
+
+module MongoMapper
+  module Document
+    included do
+      extend Devise::Models
+      extend Devise::Orm::MongoMapper::Hook
+    end
+  end
 end
