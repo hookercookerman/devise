@@ -22,8 +22,13 @@ platforms :ruby do
   end
 
   group :mongoid do
-    gem "mongo", "1.1.2"
     gem "mongoid", "2.0.0.beta.20"
-    gem "bson_ext", "1.2.1"
+  end
+  
+  group :mongo_mapper do
+    gem "orm_adapter", :git => "git://github.com/icaruswings/orm_adapter.git"
+    gem "mongo", "1.3.0"
+    gem "mongo_mapper", "0.9.0"
+    gem "bson_ext", "1.3.0"
   end
 end
