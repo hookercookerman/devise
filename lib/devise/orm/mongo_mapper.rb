@@ -25,11 +25,8 @@ module Devise
 end
 
 
-module MongoMapper
-  module Document
-    included do
-      extend Devise::Models
-      extend Devise::Orm::MongoMapper::Hook
-    end
-  end
+MongoMapper::Document::ClassMethods.class_eval do
+  include Devise::Models
+  include Devise::Orm::MongoMapper::Hook
 end
+
